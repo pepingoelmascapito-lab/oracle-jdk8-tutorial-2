@@ -1,6 +1,7 @@
 package com.example;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Manzana {
 	
@@ -143,6 +144,30 @@ public class Manzana {
 				+ peso + ", precio=" + precio + "]";
 	}
 
+
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(precio, variedad);
+	}
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Manzana other = (Manzana) obj;
+		return Objects.equals(precio, other.precio) && Objects.equals(variedad, other.variedad);
+	}
+
+
+
+	
 
 	// Otros metodos (No estan asociados a ninguna propiedad concreta, sino a varias)
 	
