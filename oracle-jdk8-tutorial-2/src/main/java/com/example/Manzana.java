@@ -146,7 +146,7 @@ public class Manzana {
 
 	// Otros metodos (No estan asociados a ninguna propiedad concreta, sino a varias)
 	
-	
+	//aqui, 78787
 	
 	
 	
