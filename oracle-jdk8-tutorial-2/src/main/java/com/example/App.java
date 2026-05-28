@@ -312,7 +312,7 @@ public class App {
 		}
 
 		
-		
+		//ANTES DE ESTUDIAR LAS SENTENCIAS DE ASIGNACION COMPUESTAS
 		
 	}
 
