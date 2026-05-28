@@ -137,109 +137,183 @@ public class App {
 			System.out.println(nombres);
 		}
 
-			/*
-			 * La sentencia anterior solamente mostro por la consola la direccion de memoria
-			 * de la zona donde estan almacenados los elementos del array pero los elementos
-			 * como tal no los ha mostrado.
+		/*
+		 * La sentencia anterior solamente mostro por la consola la direccion de memoria
+		 * de la zona donde estan almacenados los elementos del array pero los elementos
+		 * como tal no los ha mostrado.
+		 * 
+		 * Para mostrar los elementos del array se necesita una sentencia de control de
+		 * flujo, que en bucle recorra todos los elementos del array de nombres y podria
+		 * ser la sentencia for clasica, en primer lugar, y en segundo lugar la
+		 * sentencia for mejorada
+		 */
+
+		// primero: sentencia "for" clasica
+
+		System.out.println("recorriendo/iterando los elementos del array nombres con una sentencia for clasica");
+
+		int totalNOmbres = nombres.length;
+
+		// for (int i = 0; i <= totalNombres - 1; i++ ) {
+		// System.out.println(nombres[i]);
+
+		for (int i = 0; i <= nombres.length - 1; i++) {
+			System.out.println(nombres[i]);
+
+			System.out.println();
+
+			/* OPERADOR DE AUTO INCREMENTO (++) Y DE AUTO DECREMENTO (--) */
+
+			int ii = 0;
+
+			++ii;
+
+			ii++;
+		}
+
+		/*
+		 * Para comprobar la diferencia entre las dos instrucciones anteriores se puede
+		 * utilizar una herramiento de linea de comandos llamado jshell y comprobaremos
+		 * que el operador de autoincremento cuando esta solo, es lo mismo que este al
+		 * principio que al final, que no es igual a cuando esta en una expresion
+		 */
+
+		Math.random();
+
+		/*
+		 * Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que
+		 * tienen parte entera y parte fraccionaria. Los valores del array se tienen que
+		 * generar de forma aleatoria y con numeros entre 0 100,
+		 * 
+		 * Sabemos que debemos de utilizar el metodo random() de la biblioteca Math,
+		 * pero no sabemos como hacer que genere numeros aleatorios entre 0 y 100.
+		 * 
+		 * Por lo tanto vamos a utilizar la herramienta jshell para averiguar como hacer
+		 * que se generen los numeros aleatorios que queremos
+		 *//*
+			 * Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que
+			 * tienen parte entera y parte fraccionaria. Los valores del array se tienen que
+			 * generar de forma aleatoria y con numeros entre 0 100,
 			 * 
-			 * Para mostrar los elementos del array se necesita una sentencia de control de
-			 * flujo, que en bucle recorra todos los elementos del array de nombres y podria
-			 * ser la sentencia for clasica, en primer lugar, y en segundo lugar la
-			 * sentencia for mejorada
+			 * Sabemos que debemos de utilizar el metodo random() de la biblioteca Math,
+			 * pero no sabemos como hacer que genere numeros aleatorios entre 0 y 100.
+			 * 
+			 * Por lo tanto vamos a utilizar la herramienta jshell para averiguar como hacer
+			 * que se generen los numeros aleatorios que queremos
 			 */
-			
-			
-			// primero: sentencia "for" clasica
-			
-			System.out.println("recorriendo/iterando los elementos del array nombres con una sentencia for clasica");
-			
-			int totalNOmbres = nombres.length;
-			
-			//for (int i = 0; i <= totalNombres - 1; i++ ) {
-			//	System.out.println(nombres[i]);
-			
-			
-			for (int i = 0; i <= nombres.length - 1; i++ ) {
-				System.out.println(nombres[i]);
-				
-				
-				
-				System.out.println();
-				
-				/* OPERADOR DE AUTO INCREMENTO (++) Y DE AUTO DECREMENTO (--) */
 
-				int ii = 0;
+		System.out.println("Array de numeros de tipo double, generado de forma aleatoria ");
 
-				++ii;
+		double[] arrayDeDoubles = new double[20];
 
-				ii++;
-			}
+		System.out.println("Array original, con los valores por defecto ");
 
-				/* Para comprobar la diferencia entre las dos instrucciones anteriores se 
-				* puede utilizar una herramiento de linea de comandos llamado jshell y 
-				* comprobaremos que el operador de autoincremento cuando esta solo, es lo 
-				* mismo que este al principio que al final, que no es igual a cuando esta 
-				* en una expresion */
-			
-				
-				
-				
-				Math.random();	
-				
-				/* Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que 
-				* tienen parte entera y parte fraccionaria. Los valores del array se tienen que generar 
-				* de forma aleatoria y con numeros entre 0 100,
-				* 
-				* Sabemos que debemos de utilizar el metodo random() de la biblioteca Math, pero no sabemos
-				* como hacer que genere numeros aleatorios entre 0 y 100. 
-				* 
-				* Por lo tanto vamos a utilizar la herramienta jshell para averiguar como hacer que se generen 
-				* los numeros aleatorios que queremos*//* Ejemplo de creacion de un array de numeros fraccionarios, tipo double, que 
-				* tienen parte entera y parte fraccionaria. Los valores del array se tienen que generar 
-				* de forma aleatoria y con numeros entre 0 100,
-				* 
-				* Sabemos que debemos de utilizar el metodo random() de la biblioteca Math, pero no sabemos
-				* como hacer que genere numeros aleatorios entre 0 y 100. 
-				* 
-				* Por lo tanto vamos a utilizar la herramienta jshell para averiguar como hacer que se generen 
-				* los numeros aleatorios que queremos*/
-				
-				
-			
-				System.out.println("Array de numeros de tipo double, generado de forma aleatoria ");
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+			System.out.println(arrayDeDoubles[i]);
+		}
 
-				double[] arrayDeDoubles = new double[20];
+		// Rellenando el array con valores generados aleatoriamente
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+			arrayDeDoubles[i] = Math.random() * 100 - 1;
+		}
 
-				System.out.println("Array original, con los valores por defecto " );
+		// Mostrando el array resultante
 
-				for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
-				System.out.println(arrayDeDoubles[i]);
-				}
+		for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
 
-				// Rellenando el array con valores generados aleatoriamente
-				for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
-				arrayDeDoubles[i] = Math.random() * 100 - 1;
-				}
+			System.out.println(arrayDeDoubles[i]);
+		}
 
-				// Mostrando el array resultante
+		/*
+		 * Ejercicio # 1. Modificar el ejemplo anterior para que array sea de 100
+		 * numeros enteros generados aleatoriamente
+		 * 
+		 * Sugerencia: Hacer un commit previamente a ponerse con la solucion del
+		 * ejercicio, para que puedas modificar el codigo sin que se pierda el codigo
+		 * del ejemplo original
+		 */
 
-				for (int i = 0; i <= arrayDeDoubles.length - 1; i++) {
+		System.out.println("------- Solucion al Ejercicio # 1 -------");
+		long[] numerosEnteros = new long[100];
 
-				System.out.println(arrayDeDoubles[i]);
-				}
-			
-				
-				/* Ejercicio # 1. Modificar el ejemplo anterior para que 
-				* array sea de 100 numeros enteros generados aleatoriamente 
-				* 
-				* Sugerencia: Hacer un commit previamente a ponerse con la solucion
-				* del ejercicio, para que puedas modificar el codigo sin que se 
-				* pierda el codigo del ejemplo original */
-					
-					
-				
+		System.out.println("Array original de numeros enteros: ");
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			System.out.println(numerosEnteros[i]);
+		}
+
+		System.out.println("Array resultante, generado aleatoriamente");
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			numerosEnteros[i] = Math.round(Math.random() * 100 - 1);
+		}
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+			System.out.println(numerosEnteros[i]);
+		}
+
+		/*
+		 * SENTENCIA FOR MEJORADA.
+		 * 
+		 * Se recomienda su uso siempre que no haya que trabajar con el indice o los
+		 * indices de un array
+		 */
+
+		System.out.println("----- SENTENCIA FOR MEJORADA (Mal llamada forEach) ---------------");
+
+		for (long numero : numerosEnteros) {
+			System.out.println(numero);
+		}
+
+		/*
+		 * Ejercicio # 2.
+		 * 
+		 * Recorrer el array numerosEnteros y solamente mostrar aquellos elementos que
+		 * son de indice par
+		 * 
+		 * ¿Cuando un valor es par?
+		 * 
+		 * Cuando el resultado del residuo de la division por 2 es igual a cero.
+		 * 
+		 * El residuo de la division la da el operador %, o tambien mod en una
+		 * calculadora
+		 */
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+
+			if (i % 2 != 0) {
+				System.out.println("indice: " + i + ", numero: " + numerosEnteros[i]);
 			}
 		}
-	
-	
 
+		/*
+		 * Ejercicio 3, recorrer el array de numeros enteros y mostrar solamente los
+		 * elementos impares
+		 */
+		System.out.println("----- Ejercicio 3 -----");
+
+		for (long n : numerosEnteros) {
+
+			if (n % 2 != 0) {
+				System.out.println(n);
+			}
+		}
+		/*
+		 * Ejercicio 4, recorrer el array de numeros enteros y mostrar solamente los que
+		 * sean de indice impar
+		 */
+		System.out.println("----- Ejercicio 4 -----");
+
+		for (int i = 0; i <= numerosEnteros.length - 1; i++) {
+
+			if (i % 2 != 0) {
+				System.out.println("indice:" + i + ", numero " + numerosEnteros[i]);
+			}
+		}
+
+		
+		
+		
+	}
+
+}
