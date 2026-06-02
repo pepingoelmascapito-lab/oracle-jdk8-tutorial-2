@@ -606,11 +606,41 @@ public class App {
 
 	}
 
-	static String infoDiaSemana(DiaSemana diaSemana) {
+	/*
+	 * SENTENCIA SWITCH CASE.
+	 * 
+	 * Es una variante de la sentencia if - else, preferible cuando con una sentenci
+	 * if - else hay que evaluar mas de 3 o 4 condiciones porque el codigo se hace
+	 * dificil de mantener y poco legible
+	 */
 
-		String resultado = null;
+	/*
+	 * Para ejemplicar, vamos a crear un enumerable con los dias de la semana y
+	 * mostrar un mensaje en dependencia del dia de la semana que se trate.
+	 * 
+	 * Se propone crear un metodo a nivel de la clase App que recibe un tipo enum y
+	 * devuelva un tipo String con el mensaje segun el dia de la semana en cuestion
+	 */
 
-		System.out.println(DiaSemana.VIERNES);
+	/*
+	 * Solucion:
+	 * 
+	 * Primero: con una sentencia if - else en el cuerpo del metodo
+	 * 
+	 * Segundo: con una sentencia switch - case en el cuerpo del metodo
+	 */
+
+
+
+	
+	 String infoDiaSemana(DiaSemana diaSemana) {
+		 
+			System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
+	 	
+		
+			String resultado = null;
+
+	 
 		if (diaSemana.equals(DiaSemana.LUNES))
 			resultado = "Primer dia de la semana, a trabajar";
 		else if (diaSemana.equals(DiaSemana.MARTES))
@@ -630,7 +660,7 @@ public class App {
 
 		// INVOCAR EL METODO infoDiaSemana al cual le hemos quitado el modificador
 		// static
-
+		
 	 }
 
 }
