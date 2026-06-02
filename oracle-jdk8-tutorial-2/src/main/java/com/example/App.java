@@ -5,6 +5,10 @@ import java.math.BigDecimal;
 public class App {
 	public static void main(String[] args) {
 
+		
+		
+		
+
 		// El array es un identificador que hace referencia a una zona de memoria,
 		// a diferencia de una variable que hace referencia a una sola ubicacion
 		// en la memoria, y que puede contener elementos de un mismo tipo de datos
@@ -604,8 +608,11 @@ public class App {
 		 * Segundo: con una sentencia switch - case en el cuerpo del metodo
 		 */
 
-	}
-
+	
+	
+		System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
+	  }
+	
 	/*
 	 * SENTENCIA SWITCH CASE.
 	 * 
@@ -631,32 +638,35 @@ public class App {
 	 */
 
 
-
+	
 	
 	 String infoDiaSemana(DiaSemana diaSemana) {
 		 
-			System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
-	 	
-		
-			
+		 switch (diaSemana) {
 
-	 
-		if (diaSemana.equals(DiaSemana.LUNES))
-			
-			return  "Primer dia de la semana, a trabajar";
-		else if (diaSemana.equals(DiaSemana.MARTES))
-			return  "Hemos pasado el lunes";
-		else if (diaSemana.equals(DiaSemana.MIERCOLES))
-			return  "Nos acercamos al fin de semana";
-		else if (diaSemana.equals(DiaSemana.JUEVES))
-			return  "Es juernes, los nuevos viernes, a disfrutar!!!";
-		else if (diaSemana.equals(DiaSemana.VIERNES))
-			return "El viernes y el cuerpo lo sabe";
-		else if (diaSemana.equals(DiaSemana.SABADO) || diaSemana.equals(DiaSemana.DOMINGO))
-			return "Es fin de semana";
-		else
-			return "El dia recibido no existe";
+		 case LUNES:
+		 return "Primer dia de la semana, a trabajar";
 
+		 case MARTES:
+		 return "Hemos pasado el lunes";
+
+		 case MIERCOLES:
+		 return "Nos acercamos al fin de semana";
+
+		 case JUEVES:
+		 return "Es juernes, los nuevos viernes, a disfrutar!!!";
+
+		 case VIERNES:
+		 return "Es viernes y el cuerpo lo sabe";
+
+		 case SABADO:
+		 case DOMINGO:
+		 return "Es fin de semana";
+
+		 default:
+		 return "El dia recibido no existe";
+		 }
+			
 		
 
 		// INVOCAR EL METODO infoDiaSemana al cual le hemos quitado el modificador
