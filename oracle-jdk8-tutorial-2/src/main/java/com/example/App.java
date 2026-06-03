@@ -647,8 +647,13 @@ public class App {
 				// Actualizo la manzana con su nuevo precio
 				manzana.setPrecio(nuevoPrecio);
 				manzanas10PorCientoPrecioMayor[indice++] = manzana;
+				
+				
+				
 			}
 
+			
+			
 		}
 
 		// Imprimir el array de manzanas resultante
@@ -658,8 +663,8 @@ public class App {
 			if (m != null)
 				System.out.println(m);
 		
-		
-		
+									
+		// sentencia while
 		
 		
 		
