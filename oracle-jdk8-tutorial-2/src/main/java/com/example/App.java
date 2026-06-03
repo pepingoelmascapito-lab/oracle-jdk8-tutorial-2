@@ -5,10 +5,6 @@ import java.math.BigDecimal;
 public class App {
 	public static void main(String[] args) {
 
-		
-		
-		
-
 		// El array es un identificador que hace referencia a una zona de memoria,
 		// a diferencia de una variable que hace referencia a una sola ubicacion
 		// en la memoria, y que puede contener elementos de un mismo tipo de datos
@@ -446,6 +442,10 @@ public class App {
 
 		};
 
+		
+		
+		
+
 		// contador para llevar las cuentas de manzanas a las cuales le hemos leido el
 		// peso, para luego dividir el peso total entre el contador y obtener el peso
 		// promedio
@@ -608,11 +608,66 @@ public class App {
 		 * Segundo: con una sentencia switch - case en el cuerpo del metodo
 		 */
 
-	
-	
-		System.out.println(new App().infoDiaSemana(DiaSemana.VIERNES));
-	  }
-	
+		System.out.println((DiaSemana.VIERNES));
+		
+		/*
+		 * Ejercicio # 1 del Martes 2 de Junio
+		 * 
+		 * Recorrer el array de manzanas y para las manzanas cuyo tamaño (size) este
+		 * entre 5 y 7 incrementar su precio en un 10% y las que no disminuir su precio
+		 * en un 3%, agregar a un nuevo array las manzanas cuyo precio ha sido
+		 * incrementado en un 10%
+		 * 
+		 * 
+		 */
+
+		// Nuevo array de manzanas que contendra las manzanas cuyo precio se ha
+		// incrementado
+		// en un 10%
+		Manzana[] manzanas10PorCientoPrecioMayor = new Manzana[20];
+
+		int indice = 0;
+
+		for (Manzana manzana : manzanas) {
+			// Utilizando un operador ternario
+			double actualSize = manzana.getSize();
+			double precioActual = manzana.getPrecio().doubleValue();
+
+			BigDecimal nuevoPrecio = (actualSize >= 5 && actualSize <= 7)
+					// incrementar el precio en un 10%
+					? new BigDecimal(precioActual * 1.1)
+					// Disminuir el precio en un 3%
+					: new BigDecimal(precioActual * 0.97);
+
+			// La manzana tiene que ser agregada el nuevo array, si su precio es
+			// inferior al nuevoPrecio
+
+			if (precioActual < nuevoPrecio.doubleValue()) {
+
+				// Actualizo la manzana con su nuevo precio
+				manzana.setPrecio(nuevoPrecio);
+				manzanas10PorCientoPrecioMayor[indice++] = manzana;
+			}
+
+		}
+
+		// Imprimir el array de manzanas resultante
+		System.out.println("Array de manzanas resultante: ");
+
+		for (Manzana m : manzanas10PorCientoPrecioMayor)
+			if (m != null)
+				System.out.println(m);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
 	/*
 	 * SENTENCIA SWITCH CASE.
 	 * 
@@ -637,41 +692,86 @@ public class App {
 	 * Segundo: con una sentencia switch - case en el cuerpo del metodo
 	 */
 
+	static void infoDiaSemana(DiaSemana diaSemana) {
 
-	
-	
-	 String infoDiaSemana(DiaSemana diaSemana) {
-		 
-		 switch (diaSemana) {
+		// Utilizando sentencia switch - case
+		// para evaluar el valor del parametro diaSemana y devolver un mensaje
+		String resultado = "";
+		switch (diaSemana) {
 
-		 case LUNES:
-		 return "Primer dia de la semana, a trabajar";
+		case LUNES:
+			System.out.println("Primer dia de la semana, a trabajar");
+			break;
 
-		 case MARTES:
-		 return "Hemos pasado el lunes";
+		case MARTES:
+			System.out.println("Hemos pasado el lunes");
+			break;
 
-		 case MIERCOLES:
-		 return "Nos acercamos al fin de semana";
+		case MIERCOLES:
+			System.out.println("Nos acercamos al fin de semana");
+			break;
 
-		 case JUEVES:
-		 return "Es juernes, los nuevos viernes, a disfrutar!!!";
+		case JUEVES:
+			System.out.println("Es juernes, los nuevos viernes, a disfrutar!!!");
+			break;
 
-		 case VIERNES:
-		 return "Es viernes y el cuerpo lo sabe";
+		case VIERNES:
+			System.out.println("Es viernes y el cuerpo lo sabe");
+			break;
 
-		 case SABADO:
-		 case DOMINGO:
-		 return "Es fin de semana";
+		case SABADO:
+		case DOMINGO:
+			System.out.println("Es fin de semana");
 
-		 default:
-		 return "El dia recibido no existe";
-		 }
-			
-		
+		default:
+			System.out.println("El dia recibido no existe");
+		}
 
 		// INVOCAR EL METODO infoDiaSemana al cual le hemos quitado el modificador
 		// static
-		
-	 }
+		/*
+		 * OPERADOR TERNARIO
+		 * 
+		 * Trabaja con tres operandos, por lo cual se le llama ternario, que quiere
+		 * decir tres partes. Y en muchas ocasiones es la una alternativa posible cuando
+		 * hay que evaluar uno o varias condiciones y devolver un resultado
+		 * 
+		 * En su forma simple de su sintaxis es sencillo, pero cuando se anida entonces
+		 * es un poco mas complejo
+		 */
+
+		/* Sintaxis del Operador Ternario con un ejemplo sencillo */
+
+		int j = 4;
+		int k = 5;
+
+		String result = null;
+		/*
+		 * el operador ternario evalua una exprecion que tiene que dar como resultado un
+		 * valor logico verdadero o falso, si la evaluacio de la exprecion es verdadera
+		 * se retorna lo que esta a continuacion del signo de interrogacion ivertido, de
+		 * lo contrario se retorna lo que esta a continuacion de los dos puntos
+		 */
+		result = k > j ? "k es mayor que j" : "k no es mayor que j";
+
+		System.out.println("Resultado del operador ternario para los valores de: " + "k = " + k + ", y j = " + j
+				+ ", es: " + result);
+
+		/*
+		 * Cuando la expresion logica que hay que evaluar es un poco compleja, se
+		 * permite utilizar parentesis, para dar claridad a la solucion, pero no es que
+		 * sea necesario.
+		 */
+
+		/*
+		 * Ejercicio # 1 del Martes 2 de Junio
+		 * 
+		 * Recorrer el array de manzanas y para las manzanas cuyo tamaño (size) este
+		 * entre 5 y 7 incrementar su precio en un 10% y las que no disminuir su precio
+		 * en un 3%, agregar a un nuevo array las manzanas cuyo precio ha sido
+		 * incrementado en un 10%
+		 */
+
+	}
 
 }
